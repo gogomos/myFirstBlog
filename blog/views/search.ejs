@@ -1,0 +1,22 @@
+<div class="author">
+    <h1 class="author_heading">Search Results</h1>
+</div>
+
+<section class="articles">
+
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <% if(post.createdAt && post.createdAt instanceof Date){ %>
+                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+            <%} else { %>
+                <span class="article-list__date">Date not available</span>
+            <% } %>
+            </a>
+        </li>
+        <% }) %>
+    </ul>
+
+</section>
